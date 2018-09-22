@@ -14,10 +14,16 @@
 
 <div>
 	<label>Introduction</label>
-	<%= f.text_area :introduction, maxlength: "50",class: "introduction", style: "overflow:auto; width: 164px; height: 46px;" %>
+	<%= f.text_area :introduction, class: "introduction", style: "overflow:auto; width: 164px; height: 46px;" %>
 </div>
 	<%= f.submit "Update User" %>
 </div>
 <% end %>
+<% @user.errors.full_messages.each do |message| %>
+                                      <!-- エラーメッセージの配列 -->
+　　　　　<%= message %>
+
+         <% end %>
+
 
 </div>

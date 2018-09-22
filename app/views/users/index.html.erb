@@ -5,18 +5,28 @@
 			<%= attachment_image_tag current_user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
 			<table class="table">
 				<div  class="row">
-				<tbody>
-					<tr><td class="labels col-xs-4">name</td>
-						<td class="labels col-xs-8"><%= current_user.name %></td>
-					</tr>
-					<tr><td class="labels col-xs-4">introduction</td>
-						<td class="labels col-xs-8"><%= current_user.introduction %></td>
-					</tr>
-				</tbody>
-			</div>
+					<tbody>
+						<tr>
+							<td class="labels col-xs-4">
+							name
+					    	</td>
+							<td class="labels col-xs-8">
+								<%= current_user.name %>
+							</td>
+						</tr>
+						<tr>
+							<td class="labels col-xs-4">
+							introduction
+					    	</td>
+							<td class="labels col-xs-8">
+								<%= current_user.introduction %>
+							</td>
+						</tr>
+					</tbody>
+				</div>
 			</table>
 			<div class="row">
-			<%= link_to "", edit_user_path(current_user.id), class: "btn btn-default btn-block glyphicon glyphicon-wrench edit_current_user" %>
+			<%= link_to "", edit_user_path(current_user.id), class: "btn btn-default btn-block glyphicon glyphicon-wrench edit_user_#{@user}" %>
 			</div>
 
 <%= render 'users/list', book: @book %>
@@ -26,13 +36,29 @@
 			<table class="table">
 				<div class="row">
 				<thead>
-					<tr><th class="col-xs-4">image</th><th class="col-xs-4">name</th><th class="col-xs-2"></th></tr>
+					<tr>
+						<th class="col-xs-4">
+						  image
+						</th>
+					    <th class="col-xs-4">
+						  name
+						</th>
+						<th class="col-xs-2">
+						</th>
+					</tr>
 				</thead>
 				<tbody>
 					<% @users.each do |user| %>
-					<tr><td><%= attachment_image_tag user, :image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", style: "width: 40px; height: 40px;" %></td>
-						<td><%= user.name %></td>
-						<td><%= link_to "Show", user_path(user),style: "color: #666" %></td>
+					<tr>
+						<td>
+							<%= attachment_image_tag user, :image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", style: "width: 40px; height: 40px;" %>
+						</td>
+						<td>
+							<%= user.name %>
+						</td>
+						<td>
+							<%= link_to "Show", user_path(user),class: "book_#{user}",style: "color: #666" %>
+						</td>
 					</tr>
 					<% end %>
 				</tbody>

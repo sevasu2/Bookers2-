@@ -8,6 +8,11 @@
 				<%= f.text_area :opinion, class: "form-control input-sm book_body", style: "margin-bottom: 10px" %>
 				<%= f.submit "Create Book", class: "btn btn-primary btn-block" %>
 		<% end %>
+		<% @book.errors.full_messages.each do |message| %>
+                                      <!-- エラーメッセージの配列 -->
+　　　　　<%= message %>
+
+         <% end %>
 	  </div>
 	</div>
 </div>
