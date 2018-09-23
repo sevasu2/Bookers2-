@@ -1,67 +1,8 @@
 <div class="container top">
 	<div class="row">
 		<div class="col-sm-3">
-			<p style= "color: green;">
- 			<%= flash[:success]  %>
-			</p>
-			<h2>User info</h2>
-		<% if @books.user_id == current_user.id %>
-			<%= attachment_image_tag current_user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-			<table class="table">
-				<div  class="row">
-				<tbody>
-					<tr>
-						<td class="labels col-xs-4">
-						  name
-						</td>
-						<td class="labels col-xs-8">
-						   <%= current_user.name %>
-						</td>
-					</tr>
-					<tr>
-						<td class="labels col-xs-4">
-						  introduction
-						</td>
-						<td class="labels col-xs-8">
-						  <%= current_user.introduction %>
-						</td>
-					</tr>
-				</tbody>
-			</div>
-			</table>
-			<div class="row">
-			<%= link_to "", edit_user_path(current_user.id), class: "btn btn-default btn-block glyphicon glyphicon-wrench edit_user_#{@user}" %>
-			</div>
-
-		<% else %>
-
-			<%= attachment_image_tag @books.user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-			<table class="table">
-			    <div  class="row">
-			        <tbody>
-				        <tr>
-							<td class="labels col-xs-4">name
-							</td>
-							<td class="labels col-xs-8"><%= @books.user.name %>
-							</td>
-						</tr>
-						<tr>
-							<td class="labels col-xs-4">introduction
-							</td>
-							<td class="labels col-xs-8"><%= @books.user.introduction %>
-						    </td>
-						</tr>
-				  	</tbody>
-			  	</div>
-			</table>
-			<div class="row">
-			<%= link_to "", edit_user_path(current_user.id), class: "btn btn-default btn-block glyphicon glyphicon-wrench edit_user_#{@user}" %>
-			</div>
-
-			<% end %>
-
-<%= render 'users/list', book: @book %>
-
+         <%= render 'users/list', book: @book %>
+        </div>
 	<% if @books.user_id == current_user.id %>
 		<div class="col-sm-9">
 			<h2>Book detail</h2>

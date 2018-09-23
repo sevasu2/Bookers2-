@@ -10,11 +10,11 @@
 <%= form_for(@books) do |f| %>
 	<div class="field">
 		<label class="label-control">Title</label>
-		<%= f.text_field :title, class: "form-control",class: "book_title" %>
+		<%= f.text_field :title, class: "book_title" %>
 	</div>
 	<div class="field">
 		<label>Opinion</label>
-		<%= f.text_area :opinion, class: "form-control",class: "book_body"  %>
+		<%= f.text_area :opinion, class: "book_body"  %>
 	</div>
 	<div class="field">
 		<%= f.submit "Update Book", class: "btn btn-primary btn-block" %>
@@ -22,7 +22,7 @@
 <% end %>
 </div>
 
-<%= link_to "Show", book_path %>
+<%= link_to "Show", book_path,class: "book_#{@books}" %>
 |
 <%= link_to "Back", books_path,class: "back" %>
 

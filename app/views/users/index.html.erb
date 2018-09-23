@@ -1,40 +1,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-3">
-			<h2>User info</h2>
-			<%= attachment_image_tag current_user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-			<table class="table">
-				<div  class="row">
-					<tbody>
-						<tr>
-							<td class="labels col-xs-4">
-							name
-					    	</td>
-							<td class="labels col-xs-8">
-								<%= current_user.name %>
-							</td>
-						</tr>
-						<tr>
-							<td class="labels col-xs-4">
-							introduction
-					    	</td>
-							<td class="labels col-xs-8">
-								<%= current_user.introduction %>
-							</td>
-						</tr>
-					</tbody>
-				</div>
-			</table>
-			<div class="row">
-			<%= link_to "", edit_user_path(current_user.id), class: "btn btn-default btn-block glyphicon glyphicon-wrench edit_user_#{@user}" %>
-			</div>
 
-<%= render 'users/list', book: @book %>
+          <%= render 'users/list', book: @book %>
+        </div>
 
 		<div class="col-sm-9">
 			<h2>Users</h2>
 			<table class="table">
-				<div class="row">
 				<thead>
 					<tr>
 						<th class="col-xs-4">
@@ -64,6 +37,5 @@
 				</tbody>
 			</table>
 			</div>
-		</div>
 	</div>
 </div>

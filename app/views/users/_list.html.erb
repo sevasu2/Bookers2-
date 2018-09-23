@@ -1,18 +1,30 @@
+<h2>User info</h2>
+			<%= attachment_image_tag @user, :image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
+			<table class="table">
+				<tbody>
+					<tr>
+						<td class="labels">name</td>
+						<td class="labels"><%= @user.name %></td>
+					</tr>
+					<tr>
+						<td class="labels">introduction</td>
+						<td class="labels"><%= @user.introduction %></td>
+					</tr>
+				</tbody>
+			</table>
+			<%= link_to "", edit_user_path(current_user.id), class: "btn btn-default btn-block glyphicon glyphicon-wrench edit_user_#{current_user.id}" %>
+
 <h2>New book</h2>
-	<div class="row">
 	  <div class="form-group">
 		<%= form_for(@book) do |f| %>
 			<h5 class="labels">Title</h5>
-				<%= f.text_field :title, class: "form-control input-sm",class: "book_title" %>
+				<%= f.text_field :title, class: "form-control book_title" %>
 			<h5 class="labels">Opinion</h5>
-				<%= f.text_area :opinion, class: "form-control input-sm book_body", style: "margin-bottom: 10px" %>
+				<%= f.text_area :opinion, class: "form-control book_body", style: "margin-bottom: 10px" %>
 				<%= f.submit "Create Book", class: "btn btn-primary btn-block" %>
 		<% end %>
 		<% @book.errors.full_messages.each do |message| %>
-                                      <!-- エラーメッセージの配列 -->
+                               <!-- エラーメッセージの配列 -->
 　　　　　<%= message %>
-
          <% end %>
-	  </div>
-	</div>
 </div>
