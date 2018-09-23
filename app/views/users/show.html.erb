@@ -31,7 +31,7 @@
 							<%= attachment_image_tag book.user, :image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", style: "width: 40px; height: 40px;" %>
 						</td>
 						<td>
-							<%= link_to book.title, book_path(book),class: "book_#{book}" %>
+							<%= link_to book.title, book_path(book),class: "book_#{book.id}" %>
 						</td>
 						<td>
 							<%= book.opinion %>
